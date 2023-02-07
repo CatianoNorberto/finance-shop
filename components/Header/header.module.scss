@@ -1,4 +1,5 @@
 @import "/src/styles/mixins/colors.scss";
+@import "/src/styles/mixins/fontSize.scss";
 
 .headerContents{
     width: 100%;
@@ -10,7 +11,7 @@
     border-bottom: 0.0625rem solid $gray;
     border-top: 0.0625rem solid $gray;
     padding: 0 2.5rem;
-    font-size: 0.875rem;
+    font-size:  $xlv;
 }
 
 .menu{

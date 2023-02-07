@@ -1,11 +1,24 @@
 import Image from 'next/image'
+import { useKeenSlider } from 'keen-slider/react'
+
 import Button from 'components/Button'
+
+import styles from '../styles/pages/home.module.scss'
+import 'keen-slider/keen-slider.min.css'
 
 import ImageWelcome from '../../public/images/bannerWelcome.jpg'
 import Phone from '../../public/images/phone.jpg'
-import styles from '../styles/pages/home.module.scss'
+import Shirt1 from '../../public/images/1.png'
+
 
 export default function Home() {
+  const [sliderRef] = useKeenSlider({
+    slides: {
+      perView: 3,
+      spacing: 48,
+    }
+  })
+
   return (
     <div className={styles.container}> 
       <div className={styles.contents}>
@@ -39,15 +52,34 @@ export default function Home() {
             <div className={styles.appCompany}>
               <h2>Lorem ipsum dolor, sit amet consectetur adipisicing</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla adipisci dolorum voluptate.</p>
-              <div className={styles.carouleContent}>
-                <div className={styles.carouleImage}>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet a, aspernatur deleniti cum saepe adipis</p>
+              <div className={`${styles.carouleContent} ${'keen-slider'}`} ref={sliderRef}>
+                <div className={`${styles.products} ${'keen-slider__slide'}`}>
+                  <Image src={Shirt1} width={400} height={380} alt=""/>
+                  <footer>
+                    <strong>Camiseta X</strong>
+                    <span>R$ 79.90</span>
+                  </footer>
                 </div>
-                <div className={styles.carouleImage}>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet a, aspernatur deleniti cum saepe adipis</p>
+                <div className={`${styles.products} ${'keen-slider__slide'}`}>
+                  <Image src={Shirt1} width={400} height={380} alt=""/>
+                  <footer>
+                    <strong>Camiseta X</strong>
+                    <span>R$ 79.90</span>
+                  </footer>
                 </div>
-                <div className={styles.carouleImage}>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet a, aspernatur deleniti cum saepe adipis</p>
+                <div className={`${styles.products} ${'keen-slider__slide'}`} >
+                  <Image src={Shirt1} width={400} height={380} alt=""/>
+                  <footer>
+                    <strong>Camiseta X</strong>
+                    <span>R$ 79.90</span>
+                  </footer>
+                </div>
+                <div className={`${styles.products} ${'keen-slider__slide'}`}>
+                  <Image src={Shirt1} width={400} height={380} alt=""/>
+                  <footer>
+                    <strong>Camiseta X</strong>
+                    <span>R$ 79.90</span>
+                  </footer>
                 </div>
               </div>
             </div>

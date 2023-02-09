@@ -1,11 +1,9 @@
+import Link from 'next/link'
 import Image from 'next/image'
-import { GetServerSideProps } from 'next'
 
 import { useKeenSlider } from 'keen-slider/react'
 
 import { stripe } from '../lib/stripe'
-
-import Button from 'components/Button'
 
 import styles from '../styles/pages/home.module.scss'
 import 'keen-slider/keen-slider.min.css'
@@ -57,13 +55,15 @@ export default function Home( { products }) {
               <div className={`${styles.carouleContent} ${'keen-slider'}`} ref={sliderRef}>
                 {products.map(product => {
                   return (
-                    <div key={product.id} className={`${styles.products} ${'keen-slider__slide'}`}>
-                      <Image src={product.imageUrl} width={400} height={380} alt=""/>
-                      <footer>
-                        <strong>{product.name}</strong>
-                        <span>{product.price}</span>
-                      </footer>
-                    </div>
+                    <Link href={`/product/${product.id}`} key={product.id} prefetch={false}>
+                      <div  className={`${styles.products} ${'keen-slider__slide'}`}>
+                        <Image src={product.imageUrl} width={400} height={380} alt=""/>
+                        <footer>
+                          <strong>{product.name}</strong>
+                          <span>{product.price}</span>
+                        </footer>
+                      </div>
+                    </Link>
                   )
                 })}
               </div>
@@ -128,12 +128,11 @@ export default function Home( { products }) {
           </div>
         </div>
       </div>
-      {/* <Button title="Enviar" color="secundary"/> */}
     </div>
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps() {
   const response = await stripe.products.list({
     expand: ['data.default_price']
   })
@@ -143,13 +142,17 @@ export async function getServerSideProps(context) {
       id: product.id,
       name: product.name,
       imageUrl: product.images[0],
-      price: product.default_price.unit_amount / 100,
+      price: new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+      }).format(product.default_price.unit_amount / 100),
     }
   })
 
   return {
     props: {
       products,
-    }
+    },
+    revalidate: 60 * 60 * 2 // a cada 2 horas
   }
 }

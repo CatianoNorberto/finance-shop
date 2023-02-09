@@ -10,10 +10,10 @@
     margin-right: 1.25rem;
 
     &.primary{
-        background-color: $darkGreen;
+        background: $darkGreen;
     }
     
     &.secundary{
-        background-color: $black;
+        background: $brand;
     }
 }

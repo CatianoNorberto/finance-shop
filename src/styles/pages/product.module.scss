@@ -23,14 +23,13 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    max-width: 696px;
-    height: calc(656px - 0.5rem);
+    max-width: 496px;
+    height: calc(456px - 0.5rem);
     padding: 0.25rem;
 
     background: linear-gradient(180deg, #1EA483 0%, #7465D4 100%);
     border-radius: 8px;
     border: none;
-    
 
     img{
         object-fit: cover;
@@ -69,8 +68,13 @@
         cursor: pointer;
         border: none;
         background: $brand;
-        
-        &:hover{
+
+        &:disabled{
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        &:not(:disabled):hover{
             background: $brandHover;
         }
     }

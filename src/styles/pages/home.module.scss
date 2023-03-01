@@ -59,7 +59,6 @@
 
 .welcomeBanner{
     width: 100%;
-    height: 600px;
     border: none;
 
     img{
@@ -86,7 +85,7 @@
     max-width: calc(100vw - ((100vw - 600px) / 2));
     margin: 0 auto;
 
-    h2{
+    > h2{
         font-size:  $xxxvl;
         font-style: normal;
         font-weight: 500;
@@ -102,10 +101,32 @@
     border-radius: 24px;
     background: $blackCurrant;
     width: 100%;
-    height: 250px;
+    height: 100%;
 
     & + .banner{
         margin-top: 40px;
+    }
+}
+
+.contentBanner{
+    width: 100%;
+    padding: 40px;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bannerTitle{
+    width: 50%;
+     > h2{
+        color: $white;
+        font-weight: 500;
+        font-style: normal;
+        font-size:  $xvlll;
+        letter-spacing: 0.05em;
+        line-height: 2.25rem;
     }
 }
 
@@ -131,29 +152,63 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    margin-top: 80px;
+    margin-bottom: 100px;
 
     h2{
+        color: $white;
         font-weight: 700;
         font-style: normal;
-        font-size:  $xxlv;
+        font-size:  $xxxll;
         letter-spacing: 0.05em;
         line-height: 2.25rem;
+        margin-bottom: 8px;
     }
 
     >p{
-        font-size:  $xlv;
+        font-size:  $xx;
         font-style: normal;
         font-weight: 500;
         line-height: 2.25rem;
         letter-spacing: 0.05em;
         color: $nightShadow;
+        margin-bottom: 40px;
     }
-    
-    & + .appCompany{
-        margin-top: 80px;
-        margin-bottom: 100px;
-    }
+}
 
+.appCompanyVideo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    background: $blackCurrant;
+    border-radius: 1.5rem;
+    padding: 3.5rem;
+    margin-bottom: 100px;
+
+    > div{
+        margin-bottom: 40px;
+
+        h2{
+            color: $white;
+            font-weight: 700;
+            font-style: normal;
+            font-size:  $xxxll;
+            letter-spacing: 0.05em;
+            line-height: 2.25rem;
+            margin-bottom: 8px;
+        }
+
+        p{
+            font-size:  $xx;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 2.25rem;
+            letter-spacing: 0.05em;
+            color: $nightShadow;
+        }
+    }
 }
 
 .carouleContent{
@@ -224,11 +279,6 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    position: relative;
-    background: $blackCurrant;
-    border-radius: 1.5rem;
-    padding-top: 5rem;
-    // border: 0.0625rem solid $gray;
 
     p{
         font-size: 2rem;
@@ -299,7 +349,7 @@
     width: 100%;
     margin: 0 auto;
     margin-top: 50px;
-    max-width: calc(100% - ((100% - 200px) / 2));
+    max-width: calc(100% - ((100% - 400px) / 2));
 }
 
 .cards{
@@ -316,7 +366,8 @@
 }
 
 .cardImage{
-
+    width: 100%;
+    height: 100%;
 }
 
 .cardFooter{

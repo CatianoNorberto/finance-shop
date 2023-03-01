@@ -9,8 +9,9 @@ import { stripe } from '../lib/stripe'
 import styles from '../styles/pages/home.module.scss'
 import 'keen-slider/keen-slider.min.css'
 
-import ImageWelcome from '../../public/images/bannerWelcome.jpg'
-import Phone from '../../public/images/phone.jpg'
+import ImageWelcome from '../../public/images/banner1.jpg'
+import Phone from '../../public/images/banner2-removebg.png'
+import Banner from '../../public/images/banner3-removebg.png'
 
 export default function Home( { products }) {
   const [sliderRef] = useKeenSlider({
@@ -47,10 +48,61 @@ export default function Home( { products }) {
         <div className={styles.bannersContainer}>
           <div className={styles.bannersContents}>
             <h2>O Que é Finance?</h2>
-            <div className={styles.banner}></div>
-            <div className={styles.banner}></div>
-            <div className={styles.banner}></div>
-            <div className={styles.banner}></div>
+            <div className={styles.banner}>
+              <div className={styles.contentBanner}>
+                <div>
+                  <Image src={Banner} alt="fsa" />
+                </div>
+                <div className={styles.bannerTitle}>
+                  <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Illo molestias aspernatur nesciunt nobis? Ratione culpa debitis esse ut cumque ab iusto, 
+                    modi ullam qui dolores veniam natus illo eos obcaecati!
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div className={styles.banner}>
+              <div className={styles.contentBanner}>
+                <div className={styles.bannerTitle}>
+                  <h2>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Illo molestias aspernatur nesciunt nobis? Ratione culpa debitis esse ut cumque ab iusto, 
+                    modi ullam qui dolores veniam natus illo eos obcaecati!
+                  </h2>
+                </div>
+                <div>
+                  <Image src={Banner} alt="fsa" />
+                </div>
+              </div>
+            </div>
+            <div className={styles.banner}>
+              <div className={styles.contentBanner}>
+                <div>
+                  <Image src={Banner} alt="fsa" />
+                </div>
+                <div className={styles.bannerTitle}>
+                  <h2>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Illo molestias aspernatur nesciunt nobis? Ratione culpa debitis esse ut cumque ab iusto, 
+                    modi ullam qui dolores veniam natus illo eos obcaecati!
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div className={styles.banner}>
+              <div className={styles.contentBanner}>
+                <div className={styles.bannerTitle}>
+                  <h2>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Illo molestias aspernatur nesciunt nobis? Ratione culpa debitis esse ut cumque ab iusto, 
+                    modi ullam qui dolores veniam natus illo eos obcaecati!
+                  </h2>
+                </div>
+                <div>
+                  <Image src={Banner} alt="fsa" />
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className={styles.appContainer}>
@@ -74,14 +126,21 @@ export default function Home( { products }) {
                   })}
                 </div>
               </div>
-              <div className={styles.appCompany}>
-                <h2>Lorem ipsum dolor, sit amet consectetur adipisicing</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla adipisci dolorum voluptate.</p>
+              <div className={styles.appCompanyVideo}>
+                <div>
+                  <h2>Lorem ipsum dolor, sit amet consectetur adipisicing</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla adipisci dolorum voluptate.</p>
+                </div>
                 <div className={styles.appCurrent}>
-                  <p>Lorem ipsum dolor <br/>sit amet consectetur <span>adipisicing</span></p>
-                  <div className={styles.phoneImage}>
-                    <Image src={Phone}  alt=""/>
-                  </div>
+                  <iframe 
+                    width="860" 
+                    height="515" 
+                    src="https://www.youtube.com/embed/eVwTlOuzT0Q" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen
+                  ></iframe>
                 </div>
               </div>
             </div>
@@ -97,7 +156,7 @@ export default function Home( { products }) {
             <div className={styles.cardContents}>
               <div className={styles.cards}>
                 <div className={styles.cardImage}>
-                  <Image src={Phone} width={100} height={100} alt=""/>
+                  <Image src={Phone} width={190} height={235} alt=""/>
                 </div>
                 <div>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est distinctio tempora voluptatibus dicta autem nihil nobis omnis illo.</p>
@@ -105,7 +164,7 @@ export default function Home( { products }) {
               </div>
               <div className={styles.cards}>
                 <div className={styles.cardImage}>
-                  <Image src={Phone} width={100} height={100} alt=""/>
+                  <Image src={Phone} width={190} height={235} alt=""/>
                 </div>
                 <div>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est distinctio tempora voluptatibus dicta autem nihil nobis omnis illo.</p>
@@ -113,7 +172,7 @@ export default function Home( { products }) {
               </div>
               <div className={styles.cards}>
                 <div className={styles.cardImage}>
-                  <Image src={Phone} width={100} height={100} alt=""/>
+                  <Image src={Phone} width={190} height={235} alt=""/>
                 </div>
                 <div>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est distinctio tempora voluptatibus dicta autem nihil nobis omnis illo.</p>
@@ -121,7 +180,7 @@ export default function Home( { products }) {
               </div>
               <div className={styles.cards}>
                 <div className={styles.cardImage}>
-                  <Image src={Phone} width={100} height={100} alt=""/>
+                  <Image src={Phone} width={190} height={235} alt=""/>
                 </div>
                 <div>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est distinctio tempora voluptatibus dicta autem nihil nobis omnis illo.</p>
